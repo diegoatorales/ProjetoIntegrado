@@ -1,0 +1,35 @@
+version: '3.5'
+
+services:
+  redmine:
+    container_name: redmine
+    image: redmine
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      - REDMINE_DB_MYSQL=mysql-redmine
+      - REDMINE_DB_DATABASE=redmine
+      - REDMINE_DB_PASSWORD=TNQn8zZUIPAK2UOdf
+      - REDMINE_DB_USERNAME=root
+      - REDMINE_PLUGINS_MIGRATE=true
+    volumes:
+      - ./files:/usr/src/redmine/files
+      - ./plugins:/usr/src/redmine/plugins
+      - ./config/configuration.yml:/usr/src/redmine/config/configuration.yml
+
+  mysql:
+    container_name: mysql-redmine
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=TNQn8zZUIPAK2UOdf
+      - MYSQL_DATABASE=redmine
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - 3307:3306
+
+networks:
+    default:
+      name: redmine-mysql

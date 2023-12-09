@@ -1,4 +1,4 @@
-# Resumo do Projeto: MQTT para Monitoramento de Linhas de Produção em Redes Industriais
+# Documentação GB: MQTT para Monitoramento de Linhas de Produção em Redes Industriais
 
 ## Especificação do Projeto:
 O projeto visa desenvolver uma aplicação para monitoramento de uma linha de produção, utilizando o protocolo MQTT. As principais funcionalidades incluem o controle da temperatura da máquina de processamento da matéria-prima, a monitorização da velocidade de processamento e o gerenciamento do estoque de matéria-prima. A comunicação entre os componentes é realizada por meio do protocolo MQTT, enquanto a lógica de controle é implementada em Python.
